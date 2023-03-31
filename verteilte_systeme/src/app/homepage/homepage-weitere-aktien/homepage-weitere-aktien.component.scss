@@ -1,0 +1,22 @@
+.homepage-weitere-aktien {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 5em 0;
+
+    h1 {
+        font-size: 2em;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+
+    .hompage-weitere-aktien-information {
+        width: 70em;
+    }
+
+    .homepage-weitere-aktien-button {
+        display: grid;
+        align-items: center;
+        justify-content: right;
+    }
+}

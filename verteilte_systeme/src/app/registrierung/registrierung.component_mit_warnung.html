@@ -1,0 +1,85 @@
+<form class="registrierung-formular" [formGroup]="RegistrierungForm"
+    (ngSubmit)="createAccount(RegistrierungForm.value)">
+    <!--  [formGroup]="RegistrierungForm" (ngSubmit)="createAccount(RegistrierungForm.value)" -->
+    <mat-card>
+
+        <h1>Registrierung</h1>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Anrede</mat-label>
+            <mat-select formControlName="anrede">
+                <mat-option></mat-option>
+                <mat-option value="frau">Frau</mat-option>
+                <mat-option value="herr">Herr</mat-option>
+                <mat-option value="divers">Divers</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <table class="full-width" cellspacing="0">
+            <tr>
+                <td><mat-form-field class="full-width">
+                        <mat-label>Vorname</mat-label>
+                        <input matInput formControlName="vorname">
+                    </mat-form-field></td>
+                <td><mat-form-field class="full-width">
+                        <mat-label>Nachname</mat-label>
+                        <input matInput formControlName="nachname">
+                    </mat-form-field></td>
+            </tr>
+            <tr>
+                <td><mat-form-field class="full-width">
+                        <mat-label>Strasse</mat-label>
+                        <input matInput>
+                    </mat-form-field></td>
+                <td><mat-form-field class="full-width">
+                        <mat-label>Hausnummer</mat-label>
+                        <input matInput>
+                    </mat-form-field></td>
+            </tr>
+            <tr>
+                <td><mat-form-field class="full-width">
+                        <mat-label>Postleizahl</mat-label>
+                        <input matInput #postalCode maxlength="5">
+                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                    </mat-form-field></td>
+                <td><mat-form-field class="full-width">
+                        <mat-label>Stadt</mat-label>
+                        <input matInput>
+                    </mat-form-field></td>
+            </tr>
+        </table>
+
+        <h4>Spielerdaten</h4>
+
+        <table class="full-width">
+            <tr>
+                <td><mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Spielername</mat-label>
+                        <input matInput [formControl]="spielername_validate" required>
+                        <mat-error *ngIf="spielername_validate.invalid">{{getErrorMessageSpielername()}}</mat-error>
+                    </mat-form-field></td>
+            </tr>
+
+            <tr>
+                <td><mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput [formControl]="email_validate" required>
+                        <mat-error *ngIf="email_validate.invalid">{{getErrorMessageMail()}}</mat-error>
+                    </mat-form-field></td>
+
+                <td><mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Passwort</mat-label>
+                        <input matInput [formControl]="passwort_validate" required [type]="hide ? 'password' : 'text'">
+                        <mat-error *ngIf="passwort_validate.invalid">{{getErrorMessagePasswort()}}</mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field></td>
+            </tr>
+            <br>
+            <button mat-raised-button type="submit">Registrieren</button>
+
+        </table>
+    </mat-card>
+</form>

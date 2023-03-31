@@ -1,0 +1,50 @@
+.mutliplayer-join {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+
+    .multiplayer-join-box {
+        padding: 2em;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            font-size: 1em;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .join-parameter {
+            width: 20em;
+            margin: 1em;
+
+            &:last-child {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}

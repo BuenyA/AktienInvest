@@ -1,0 +1,34 @@
+.homepage-multiplayer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0e1625;
+    height: 15em;
+    padding: 2em 0;
+
+    h1 {
+        font-size: 2em;
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: white;
+    }
+
+    p {
+        color: white;
+        margin: 0;
+    }
+
+    .hompage-multiplayer-information {
+        width: 60em;
+        height: 10em;
+        display: grid;
+        align-items: flex-start;
+    }
+
+    .hompage-multiplayer-button {
+        display: flex;
+        justify-content: right;
+        align-items: flex-end;
+        height: 10em;
+    }
+}

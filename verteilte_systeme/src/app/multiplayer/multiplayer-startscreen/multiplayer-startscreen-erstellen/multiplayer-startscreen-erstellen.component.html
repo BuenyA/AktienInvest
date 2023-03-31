@@ -1,0 +1,68 @@
+<div class="mutliplayer-join">
+    <div class="multiplayer-join-box">
+        <h1>Multiplayer Spiel erstellen</h1>
+        <p>Zur Erstellung des Spiels sind diverse Angaben vonnöten:</p>
+        <form class="example-form" [formGroup]="MultiplayerForm"
+            (ngSubmit)="createMultiplayerGame(MultiplayerForm.value)">
+            <div class="join-top">
+                <div>
+                    <div class="join-parameter">
+                        <h2>ID</h2>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <input matInput disabled value="ID wird automatisch generiert...">
+                        </mat-form-field>
+                    </div>
+                    <div class="join-parameter">
+                        <h2>Passwort</h2>
+                        <mat-form-field appearance="fill" appearance="outline">
+                            <mat-label>Bitte Passwort eingeben</mat-label>
+                            <input matInput formControlName="password" #postalCode [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error *ngIf="postalCode.value.length < 4">
+                                Bitte mindestens 4 Zeichen eingeben
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="join-seperator"></div>
+                <div>
+                    <div class="join-parameter">
+                        <h2>Budget</h2>
+                        <mat-form-field appearance="fill" appearance="outline">
+                            <mat-label>Bitte Geldmenge eingeben</mat-label>
+                            <input formControlName="budget" matInput pattern="[0-9]*" #postalCode2 maxlength="7">
+                            <mat-hint align="end">{{postalCode2.value.length}} / 7</mat-hint>
+                            <mat-error *ngIf="postalCode2.value.length < 1">
+                                Bitte etwas eingeben
+                            </mat-error>
+                        </mat-form-field>
+                        <!-- <mat-slider min="0" max="100000" step="1000" discrete [displayWith]="formatLabel">
+                            <input matSliderThumb [(ngModel)]="value">
+                        </mat-slider>   -->
+                    </div>
+                    <div class="join-parameter">
+                        <h2>Zeitspanne auswählen</h2>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Geben Sie einen Zeitraum an</mat-label>
+                            <mat-date-range-input [rangePicker]="picker">
+                                <input matStartDate placeholder="Start-Datum" formControlName="startDate">
+                                <input matEndDate placeholder="End-Datum" formControlName="endDate">
+                            </mat-date-range-input>
+                            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="join-button">
+                <button type="submit" mat-raised-button>Bestätigen</button>
+                <button routerLink="../" mat-raised-button>Zurück</button>
+            </div>
+        </form>
+        <!-- <button (click)="getMessage()" mat-raised-button>Zurück</button> -->
+    </div>
+</div>

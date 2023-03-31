@@ -1,0 +1,22 @@
+h1 {
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+.aktien-und-etfs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    
+    .aktien-und-etfs-area {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        min-width: 80em;
+
+        .aktien-und-etfs-list {
+            width: 70em;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+version: '3.3'
+services:
+  server:
+    build: server
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      MYSQL_DATABASE: aktieninvestdb
+      MYSQL_USER: aktieninvestuser
+      MYSQL_PASSWORD: aktieninvestpass
+      MYSQL_HOSTNAME: maria_db
+    links:
+      - maria_db
+    depends_on:
+      - maria_db
+    # Overwrite to nodemon only for DEV!
+    command: nodemon -L server.js
+    # Host mount path overwrite for nodemon - only for DEV!
+    volumes:
+      # :Z may needs to be removed, if this does not work
+      - ./server:/usr/src/app:Z
+  maria_db:
+    # Use of a modified datbase in 'db'-folder.
+    # See README.md for more information.
+    build: db
+    restart: always
+    environment:
+      MYSQL_DATABASE: aktieninvestdb
+      MYSQL_USER: aktieninvestuser
+      MYSQL_PASSWORD: aktieninvestpass
+      MYSQL_RANDOM_ROOT_PASSWORD: aktieninvestpassroot
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8085:80
+    environment:
+      PMA_HOST: maria_db
+  influxdb:
+    container_name: influxdb
+    image: influxdb
+    restart: unless-stopped
+    ports:
+      - "8086:8086/tcp"   # So we can access the WebUI
+    environment:
+      - TZ=Europe/Brussels
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUXDB_USER}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_ORG=${INFLUXDB_ORG}
+      - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUXDB_BUCKET}
+    volumes:
+      - /opt/influxdb/data:/var/lib/influxdb2
+      - /opt/influxdb/config/:/etc/influxdb2
+    ulimits:
+      nofile:
+        soft: 32768
+        hard: 32768

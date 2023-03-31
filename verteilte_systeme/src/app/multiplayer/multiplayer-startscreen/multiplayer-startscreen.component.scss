@@ -1,0 +1,18 @@
+.multiplayer-startscreen-component {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.buttons {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 10em;
+}
+
+button {
+    width: 30em;
+    height: 3.5em;
+}

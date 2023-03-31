@@ -1,0 +1,35 @@
+<div class="account">
+    <mat-card>
+
+        <h1>Accountdaten</h1>
+        <button class="button1" mat-raised-button>Ändern</button>
+        <button class="button2" mat-raised-button (click)="openDialog()">Account löschen</button>
+
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+
+            <mat-tab label="Spielerdaten">
+                <div class="tabs" *ngFor="let row of Accountdaten">
+                    Spielername: {{row.SPIELERNAME}}<br>
+                    Email: {{row.EMAIL}}<br>
+                    <br><br>
+                    Platzierung Allzeit-Bestenliste:
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Persönliche Daten">
+                <div class="tabs" *ngFor="let row of Accountdaten">
+                    Anrede: {{row.ANREDE}}<br>
+                    Vorname: {{row.VORNAME}}<br>
+                    Nachname: {{row.NACHNAME}}<br>
+                    Strasse: {{row.STRASSE}}<br>
+                    Hausnummer: {{row.HAUSNUMMER}}<br>
+                    Postleitzahl: {{row.PLZ}}<br>
+                    Stadt:{{row.STADT}}
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+
+    </mat-card>
+</div>
+<app-footer></app-footer>

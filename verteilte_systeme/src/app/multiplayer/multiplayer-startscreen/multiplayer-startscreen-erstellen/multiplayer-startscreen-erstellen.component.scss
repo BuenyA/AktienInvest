@@ -1,0 +1,70 @@
+.mutliplayer-join {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+
+    .multiplayer-join-box {
+        padding: 2em;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+
+        .example-form {
+
+            .join-top {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5em;
+
+                h2 {
+                    font-size: 1em;
+                    font-weight: 500;
+                    text-align: center;
+                }
+
+                .join-parameter {
+                    display: grid;
+                    width: 25em;
+                    margin: 1em;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                .join-seperator {
+                    width: 1px;
+                    margin: 0 4em;
+                    height: 25em;
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+
+    .join-button {
+        display: flex;
+        width: 30%;
+        justify-self: center;
+        justify-content: space-around;
+    }
+}
+
+.example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+}
+
+.example-form {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-full-width {
+    width: 100%;
+}
