@@ -9,8 +9,6 @@ import * as jwt from 'jsonwebtoken';
 import * as fs from "fs";
 //////////// */
 
-//Bitte schmeiß kein Fehler
-
 const express = require('express');
 
 //bcrypt Passwort hashen (serverseitig)
@@ -44,7 +42,7 @@ connection.query("CREATE TABLE IF NOT EXISTS table1 (task_id INT AUTO_INCREMENT 
 // See readme.md for more information about that.
 
 // Check the connection
-connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+/* connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
     if (error) throw error; // <- this will throw the error and exit normally
     // check the solution - should be 2
     if (results[0].solution == 2) {
@@ -55,7 +53,7 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
         console.error("There is something wrong with your database connection! Please check");
         process.exit(5); // <- exit application with error code e.g. 5
     }
-});
+}); */
 
 
 // Constants
