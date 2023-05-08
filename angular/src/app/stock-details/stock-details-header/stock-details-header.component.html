@@ -1,0 +1,21 @@
+<div class="details">
+    <div class="details-header">
+        <div class="details-header-left">
+            <div class="details-logo-name">
+                <img src="assets/images/company_logos/{{ stockSymbol }}.png" alt="Logo">
+                <div>
+                    <h1>{{ stockName }}</h1>
+                    <h2>Börse: {{ stockExchange }}, Symbol: {{ stockSymbol }}</h2>
+                </div>
+            </div>
+            <div class="details-price-percent">
+                <h3>$ {{ price | number : '.2-2' }}</h3>
+                <h4 *ngIf="chgDol >= 0">$ +{{ chgDol | number : '.2-2' }} (+{{ chgPerc | number : '.2-2'}} %)</h4>
+                <h4 *ngIf="chgPerc < 0">$ {{ chgDol | number : '.2-2' }} ({{ chgPerc | number : '.2-2'}} %)</h4>
+            </div>
+        </div>
+        <div class="details-header-right">
+            <img src="assets/images/icons/star.svg" alt="">
+        </div>
+    </div>
+</div>

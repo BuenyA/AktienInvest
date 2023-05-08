@@ -1,0 +1,10 @@
+<div class="homepage-deine-aktien">
+    <div class="hompage-deine-aktien-information">
+        <h1 *ngIf="!multiplayerMode">Meine Wertpapiere</h1>
+        <h1 *ngIf="multiplayerMode">Meine Multiplayer Wertpapiere</h1>
+    </div>
+    <app-own-transactions [allDataSelected]="allDataSelected" [dataSource]="dataSource"></app-own-transactions>
+    <div class="homepage-deine-aktien-button">
+        <button mat-raised-button color="accent" routerLink="/own-stocks">Meine Wertpapiere</button>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+.header-component {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 0px 5px 5px rgb(0, 0, 0, 0.03);
+    background-color: white;
+    height: 5em;
+    width: 99.999999vw;
+    top: 0;
+    z-index: 99999;
+
+    .header-left {
+        display: flex;
+
+        .header-logo-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5em;
+            cursor: pointer;
+    
+            h1 {
+                font-size: 1.7em;
+                font-weight: 500;
+                text-transform: uppercase;
+                margin: 0;
+                color: black;
+            }
+    
+            img {
+                margin-right: 0.8em;
+                width: 40px;
+                height: auto;
+            }
+        }
+    
+        .header-menu {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+    
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 0;
+                margin: 0;
+    
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    list-style: none;
+                    margin: 1px;
+    
+                    a {
+                        padding: 5px 15px;
+                        color: black;
+                        text-decoration: none;
+                        font-size: 1em;
+                        font-weight: 500;
+                        color: black;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-mein-account-logout {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 14em;
+
+        button {
+            
+            &:last-of-type {
+                color: black;
+            }
+        }
+    }
+}

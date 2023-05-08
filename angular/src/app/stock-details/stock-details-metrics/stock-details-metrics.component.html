@@ -1,0 +1,60 @@
+<div class="stock-metrics">
+    <div class="headline">
+        <h1>Kennzahlen</h1>
+        <img src="assets/images/company_logos/{{ stockSymbol }}.png" alt="Logo">
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td class="bold">Eröffnung</td>
+                <td></td>
+                <td class="bold">Vortag</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>$ {{ open | number : '.2-2' }}</td>
+                <td></td>
+                <td>$ {{ previousClose | number : '.2-2' }}</td>
+            </tr>
+            <tr>
+                <td class="bold">Höchster Kurs</td>
+                <td></td>
+                <td class="bold">Niedrigster Kurs</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>$ {{ dayHigh | number : '.2-2' }}</td>
+                <td></td>
+                <td>$ {{ dayLow | number : '.2-2' }}</td>
+            </tr>
+            <tr>
+                <td class="bold">Jahreshoch</td>
+                <td></td>
+                <td class="bold">Jahrestief</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>$ {{ yearHigh | number : '.2-2' }}</td>
+                <td></td>
+                <td>$ {{ yearLow | number : '.2-2' }}</td>
+            </tr>
+            <tr>
+                <td class="bold">1 Tag $</td>
+                <td></td>
+                <td class="bold">1 Tag %</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td *ngIf="chgPerc >= 0">$ +{{ chgPerc | number : '.2-2' }}</td>
+                <td *ngIf="chgPerc < 0">$ {{ chgPerc | number : '.2-2' }}</td>
+                <td></td>
+                <td *ngIf="chgDol >= 0">% +{{ chgDol | number : '.2-2' }}</td>
+                <td *ngIf="chgDol < 0">% {{ chgDol | number : '.2-2' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

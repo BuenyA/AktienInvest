@@ -1,0 +1,57 @@
+.details {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5em;
+}
+
+.details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .details-header-left {
+
+        .details-logo-name {
+            width: 60em;
+            height: 5em;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 55px;
+                height: auto;
+                margin-right: 1em;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin: 0;
+            }
+
+            h2 {
+                font-size: 0.8em;
+                font-weight: 400;
+            }
+        }
+
+        .details-price-percent {
+            margin-left: 4.6em;
+
+            h3 {
+                font-size: 1.7em;
+            }
+
+            h4 {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .details-header-right {
+        img {
+            width: 30px;
+            height: auto;
+        }
+    }
+}

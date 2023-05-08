@@ -1,0 +1,22 @@
+<app-header></app-header>
+<app-multiplayer-warn *ngIf="multiplayerMode"></app-multiplayer-warn>
+<div class="stock-details">
+    <app-stock-details-header [price]="price" [chgDol]="chgDol" [chgPerc]="chgPerc" [stockName]="stockName"
+        [stockSymbol]="stockSymbol" [stockExchange]="stockExchange">>
+    </app-stock-details-header>
+    <app-aktien-chart></app-aktien-chart>
+    <div class="stock-details-buy-metrics">
+        <app-stock-details-metrics [dayHigh]="dayHigh" [dayLow]="dayLow" [open]="open" [previousClose]="previousClose"
+            [price]="price" [yearHigh]="yearHigh" [yearLow]="yearLow" [chgDol]="chgDol" [chgPerc]="chgPerc"
+            [stockSymbol]="stockSymbol">
+        </app-stock-details-metrics>
+    </div>
+    <div class="placeholder-second"></div>
+    <div class="stock-details-buy-metrics">
+        <app-stock-details-buying [price]="price" [stockSymbol]="stockSymbol">
+        </app-stock-details-buying>
+    </div>
+    <div class="placeholder-second"></div>
+    <app-stock-details-selling [price]="price" [stockSymbol]="stockSymbol"></app-stock-details-selling>
+</div>
+<app-footer></app-footer>

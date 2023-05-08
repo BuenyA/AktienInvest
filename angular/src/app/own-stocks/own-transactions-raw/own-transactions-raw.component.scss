@@ -1,0 +1,43 @@
+.table-container {
+    width: 100%;
+    min-height: 20em;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    .table-scale {
+        width: 70em;
+        
+        .mat-elevation-z8 {
+            box-shadow: 0 0 0 0;
+        }
+    }
+
+    .demo-table {
+        width: 10em;
+        border-radius: 10px;
+        overflow: hidden;
+    
+        td {
+            img {
+                width: 30px;
+                height: auto;
+                
+            }
+        }
+    
+        .mat-mdc-row .mat-mdc-cell {
+            border: 0;
+            cursor: pointer;
+        }
+        
+        .mat-mdc-row:hover .mat-mdc-cell {
+            border-color: currentColor;
+            background-color: whitesmoke;
+        }
+        
+        .demo-row-is-clicked {
+            font-weight: bold;
+        }
+    }
+}

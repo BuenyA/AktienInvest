@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+}
+
+.dialog-content{
+    display: grid;
+
+    h2 {
+        font-size: 3em;
+        text-align: center;
+        color: black;
+    }
+
+    h3 {
+        font-size: 1em;
+        font-weight: 500;
+        color: black;
+    }
+
+    .price-budget {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.id_info {
+    margin-top: 0.5em;
+    color: red;
+}

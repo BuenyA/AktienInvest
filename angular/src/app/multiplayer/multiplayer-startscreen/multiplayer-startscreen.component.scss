@@ -1,0 +1,57 @@
+.multiplayer-startscreen-component {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+
+    .multiplayer-startscreen-elements {
+        display: grid;
+        align-items: center;
+        width: 70em;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            opacity: 50%;
+            font-size: 1em;
+        }
+
+        .multiplayer-choose {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5em;
+
+            p {
+                margin: 0;
+            }
+
+            button {
+                width: 20em;
+                height: 2.5em;
+                margin-top: 1em;
+            }
+    
+            .create-game {
+                display: grid;
+                align-items: center;
+                width: 30em;
+                height: 11em;
+            }
+
+            .seperator {
+                height: 11em;
+                width: 1px;
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+    
+            .join-game {
+                display: grid;
+                align-items: center;
+                width: 30em;
+                height: 11em;
+            }
+        }       
+    }
+}

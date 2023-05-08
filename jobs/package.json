@@ -1,0 +1,18 @@
+{
+  "name": "docker_web_app_server",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Buenyamin Aydemir; Marharyta Kovalenko, Matthias Schambier",
+  "main": "job_handler.js",
+  "scripts": {
+    "start": "node job_handler.js"
+  },
+  "dependencies": {
+    "@alpacahq/alpaca-trade-api": "^2.16.1",
+    "@influxdata/influxdb-client": "^1.33.2",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17",
+    "financialmodelingprep": "^1.1.0",
+    "mysql": "^2.18"
+  }
+}

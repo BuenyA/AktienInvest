@@ -1,0 +1,24 @@
+<div *ngIf="loadedImg > 0">
+    <div class="header">
+        <app-startpage-header></app-startpage-header>
+    </div>
+    <div class="startpage">
+        <div class="startpage-main-area">
+            <div class="startpage-main-content">
+                <div class="startpage-headline">
+                    <div>
+                        <h1>AKTIENINVEST</h1>
+                        <h2>Einfach fiktiv investieren</h2>
+                    </div>
+                    <div>
+                        <p>Erhalte 2% p.a. Zinsen auf Dein nicht-investiertes Guthaben und investiere schon ab 1 € in
+                            Aktien, ETFs, Sparpläne, Crypto und Derivate - alles in einer App. </p>
+                        <button *ngIf="!isLoggedIn()" color="primary" mat-raised-button routerLink="/registrierung">Registrieren</button>
+                        <button *ngIf="isLoggedIn()" color="primary" mat-raised-button routerLink="/homepage">Zum Aktiendepot</button>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>

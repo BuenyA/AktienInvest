@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Accountdaten ändern</h2>
+<mat-dialog-content
+  >Bitte geben Sie zur Bestätigung der Änderung ihr aktuelles Passwort ein.<br />
+</mat-dialog-content>
+
+<form
+  class="registrierung-formular"
+  [formGroup]="PasswordCheckForm"
+  (submit)="check_password()"
+>
+  <!--(ngSubmit)="createAccount(RegistrierungForm.value)"-->
+  <!--  [formGroup]="RegistrierungForm" (ngSubmit)="createAccount(RegistrierungForm.value)" -->
+  <div class="pw_check">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Passwort</mat-label>
+      <input
+        matInput
+        type="password"
+        #passwort
+        formControlName="passwort"
+        minlength="7"
+        required
+        [type]="hide ? 'password' : 'text'"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+        type="button"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <br />
+    <button
+      mat-raised-button
+      [disabled]="!PasswordCheckForm.valid"
+      type="submit"
+    >
+      Passwort bestätigen
+    </button>
+    <p class="serverAnswer">{{ serverAntwort }}</p>
+  </div>
+</form>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close="true" [disabled]="!password_correct">
+    Änderung durchführen
+  </button>
+  
+  <button mat-button mat-dialog-close="false">Abbrechen</button>
+</mat-dialog-actions>

@@ -1,0 +1,21 @@
+<header class="header-component">
+    <div class="header-left">
+        <div class="header-logo-name" routerLink="/startpage">
+            <img src="/assets/images/logo/logo1.png" alt="Das Logo konnte nicht geladen werden!">
+            <h1>AktienInvest</h1>
+        </div>
+        <div class="header-menu">
+            <ul>
+                <li><a routerLink="/login">Aktien und ETFs</a></li>
+                <li><a routerLink="/login">Multiplayer</a></li>
+                <li><a routerLink="/login">Highscore</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-mein-account-logout">
+        <button *ngIf="!isLoggedIn()" color="primary" mat-raised-button routerLink="/registrierung">Registrieren</button>
+        <button *ngIf="isLoggedIn()" color="primary" mat-raised-button routerLink="/mein-account">Mein Account</button>
+        <button *ngIf="!isLoggedIn()" color="primary" mat-button routerLink="/login">Login</button>
+        <button *ngIf="isLoggedIn()" color="primary" mat-button (click)="logout()">Logout</button>
+    </div>
+</header>

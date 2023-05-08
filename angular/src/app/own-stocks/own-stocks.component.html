@@ -1,0 +1,46 @@
+<app-header></app-header>
+<app-multiplayer-warn *ngIf="multiplayerMode"></app-multiplayer-warn>
+<div class="homepage-header">
+    <h1>Meine Übersicht</h1>
+    <div class="hompage-header-information">
+        <h1>Portfolio</h1>
+        <div class="seperator"></div>
+        <div class="information-budget">
+            <div>
+                <h3>Insgesamter Depotwert</h3>
+                <h2>{{ stockCumulativeBudget | currency }}</h2>
+                <div *ngIf="!multiplayerMode">
+                    <h3>Prozentuale Veränderung</h3>
+                    <div *ngIf="stockCumulativeBudget == 0">
+                        <h4>{{ 0 | currency:"USD":true}} (0.00%)</h4>
+                    </div>
+                    <div *ngIf="stockCumulativeBudget < 3000 && stockCumulativeBudget > 0">
+                        <h4>{{ stockCumulativeBudget - 3000 | currency:"USD":true}} ({{ (stockCumulativeBudget / 3000) - 1 | number : '.2-2' }}%)</h4>
+                    </div>
+                    <div *ngIf="stockCumulativeBudget >= 3000">
+                        <h4>+{{ stockCumulativeBudget - 3000 | currency:"USD":true}} ({{ (stockCumulativeBudget / 3000) - 1 | number : '.2-2' }}%)</h4>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Frei verfügbares Budget</h3>
+                <div *ngIf="multiplayerMode">
+                    <h2>{{ Accountdaten[0]['MLTP_KONTOSTAND'] | currency:"USD":true }}</h2>
+                </div>
+                <div *ngIf="!multiplayerMode">
+                    <h2>{{ Accountdaten[0]['KONTOSTAND'] | currency:"USD":true }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="transactions">
+        <h2>Meine Wertpapiere</h2>
+        <app-own-transactions [allDataSelected]="allDataSelected" [dataSource]="dataSource"></app-own-transactions>
+        <div class="buttonAktienUndEtfs">
+            <button mat-raised-button color="accent" routerLink="../aktien-und-etfs">Weitere Wertpapiere</button>
+        </div>
+        <h2>Alle Transaktionen</h2>
+        <app-own-transactions-raw [allDataSelected]="allDataSelected1" [dataSource]="dataSource1"></app-own-transactions-raw>
+    </div>
+</div>
+<app-footer></app-footer>

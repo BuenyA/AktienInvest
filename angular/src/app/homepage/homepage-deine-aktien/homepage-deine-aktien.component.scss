@@ -1,0 +1,23 @@
+.homepage-deine-aktien {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 5em;
+
+    h1 {
+        font-size: 2em;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+
+    .hompage-deine-aktien-information {
+        width: 70em;
+    }
+
+    .homepage-deine-aktien-button {
+        display: grid;
+        align-items: center;
+        justify-content: right;
+        margin-top: 1.5em;
+    }
+}

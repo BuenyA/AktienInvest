@@ -1,0 +1,18 @@
+.stock-details {
+    margin-bottom: 10em;
+
+    .stock-details-buy-metrics {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0em 0;
+    }
+    
+    .placeholder-second {
+        width: 70em;
+        height: 1px;
+        background-color: rgba(0,0,0,0.2);
+        margin: 5em 0 5em 50vw;
+        transform: translateX(-50%);
+    }
+}

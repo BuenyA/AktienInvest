@@ -1,0 +1,20 @@
+{
+  "name": "docker_web_app_server",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Buenyamin Aydemir <aydemir.buny@gmail.com>; Marharyta Kovalenko, Matthias Schambier",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.33.2",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17",
+    "financialmodelingprep": "^1.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "mysql": "^2.18"
+  }
+}

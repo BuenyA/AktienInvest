@@ -1,0 +1,50 @@
+.buying-selling {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    .buying-selling-card {
+        display: grid;
+        align-items: center;
+        height: 22em;
+        width: 60em;
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h4 {
+            color: gray;
+            font-size: 0.8em;
+            margin: 0;
+        }
+
+        p {
+            font-weight: 500;
+        }
+
+        .card-number-marketprice {
+            display: flex;
+            justify-content: space-between;
+
+            h2 {
+                font-size: 1em;
+                font-weight: 500;
+            }
+
+            .join-parameter {
+                display: grid;
+                justify-content: space-between;
+                width: 25em;
+    
+                .example-full-width {
+                    width: 23em;
+                }
+            }
+        }
+        
+        .buy-button {
+            margin-top: 1em;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<div class="buying-selling">
+    <div class="buying-selling-card">
+        <div>
+            <h1>Kaufen</h1>
+            <p *ngIf="multiplayerMode">Derzeit stehen dir ${{ data[0]['MLTP_KONTOSTAND'] }} zur Verfügung</p>
+            <p *ngIf="!multiplayerMode">Derzeit stehen dir ${{ data[0]['KONTOSTAND'] }} zur Verfügung</p>
+        </div>
+        <div class="card-number-marketprice">
+            <div class="join-parameter">
+                <h2>Anzahl</h2>
+                <mat-form-field class="example-full-width" appearance="fill" appearance="outline">
+                    <input *ngIf="multiplayerMode" matInput type="number" [(ngModel)]="numberOfStocks" min="0" max="{{ data[0]['MLTP_KONTOSTAND'] / price }}" placeholder="0">
+                    <input *ngIf="!multiplayerMode" matInput type="number" [(ngModel)]="numberOfStocks" min="0" max="{{ data[0]['KONTOSTAND'] / price }}" placeholder="0">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="card-number-marketprice">
+            <div class="join-parameter">
+                <h2>Betrag (indikativ)</h2>
+                <h3>{{ numberOfStocks * price | currency:'USD':true }}</h3>
+            </div>
+            <div>
+                <h2>Marktpreis</h2>
+                <h3>${{ price | number : '.2-2' }}</h3>
+            </div>
+        </div>
+        <div>
+            <h4>Der folgende Betrag ist lediglich ein fiktiver Kostenvoranschlag und kein rechtlich geltendes Angebot.</h4>
+            <h4>Bei Fragen können Sie sich gerne an unser Supporteam wenden.</h4>
+        </div>
+        <div class="buy-button">
+            <button *ngIf="multiplayerMode" (click)="openDialogMltp()" color="primary" mat-raised-button>Kaufen</button>
+            <button *ngIf="!multiplayerMode" (click)="openDialog()" color="primary" mat-raised-button>Kaufen</button>
+        </div>
+    </div>
+</div>

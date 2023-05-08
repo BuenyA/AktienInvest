@@ -1,1 +1,0 @@
-# Client - (Web-)Server Extended mit einer Datenbank in Node.js mit nodemon

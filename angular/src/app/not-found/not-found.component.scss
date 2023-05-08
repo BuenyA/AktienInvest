@@ -1,0 +1,25 @@
+.notfound {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+
+    .notfound-elements {
+        display: grid;
+
+        h1 {
+            font-size: 10em;
+            text-align: center;
+        }
+        h2 {
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    button {
+        margin-top: 3em;
+        justify-self: center;
+    }
+}

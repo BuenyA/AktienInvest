@@ -1,0 +1,18 @@
+<app-header></app-header>
+<app-multiplayer-warn *ngIf="multiplayerMode"></app-multiplayer-warn>
+<!-- <app-test></app-test> -->
+<div class="aktien-und-etfs"> 
+    <div class="aktien-und-etfs-area">
+        <h1>Nach Angeboten suchen (Coming Soon...)</h1>
+        <app-search-box></app-search-box>
+        <div class="aktien-und-etfs-list">
+            <h1>Alle Angebote</h1>
+            <mat-tab-group>
+                <mat-tab label="Aktien"><app-aktien-preview></app-aktien-preview></mat-tab>
+                <mat-tab label="ETFs"><app-aktien-preview></app-aktien-preview></mat-tab>
+                <mat-tab label="Derivate"><app-aktien-preview></app-aktien-preview></mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

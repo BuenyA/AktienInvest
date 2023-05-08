@@ -1,0 +1,88 @@
+<app-header></app-header>
+<form class="registrierung-formular" [formGroup]="EditForm" (submit)="submit()">
+    <mat-card>
+        <h1>Accountdaten ändern</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Anrede</mat-label>
+            <mat-select formControlName="anrede" required>
+                <mat-option></mat-option>
+                <mat-option value="frau">Frau</mat-option>
+                <mat-option value="herr">Herr</mat-option>
+                <mat-option value="divers">Divers</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <table class="full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <mat-label>Vorname</mat-label>
+                        <input matInput formControlName="vorname" required />
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="full-width">
+                        <mat-label>Nachname</mat-label>
+                        <input matInput formControlName="nachname" required />
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <mat-label>Strasse</mat-label>
+                        <input matInput formControlName="strasse" />
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="full-width">
+                        <mat-label>Hausnummer</mat-label>
+                        <input matInput formControlName="hausnummer" />
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="full-width">
+                        <mat-label>Postleitzahl</mat-label>
+                        <input matInput #postalCode maxlength="5" formControlName="plz" />
+                        <mat-hint align="end">{{ postalCode.value.length }} / 5</mat-hint>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="full-width">
+                        <mat-label>Stadt</mat-label>
+                        <input matInput formControlName="stadt" />
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+
+        <h4>Spielerdaten</h4>
+
+        <table class="full-width">
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Spielername</mat-label>
+                        <input matInput formControlName="spielername" required />
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" type="email" required />
+                        <mat-hint align="end">Bitte gültige Mail Adresse angeben</mat-hint>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+            <br />
+            <button mat-raised-button [disabled]="!EditForm.valid" type="submit">
+                Daten ändern
+            </button>
+            <p class="serverAnswer">{{ serverAntwort }}</p>
+        </table>
+    </mat-card>
+</form>
+<app-footer></app-footer>

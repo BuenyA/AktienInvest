@@ -1,0 +1,30 @@
+<header class="header-component">
+    <div class="header-left">
+        <div *ngIf="multiplayerMode" class="header-logo-name" routerLink="/multiplayer/homepage">
+            <img src="/assets/images/logo/logo1.png" alt="Das Logo konnte nicht geladen werden!">
+            <h1>AktienInvest</h1>
+        </div>
+        <div *ngIf="!multiplayerMode" class="header-logo-name" routerLink="/homepage">
+            <img src="/assets/images/logo/logo1.png" alt="Das Logo konnte nicht geladen werden!">
+            <h1>AktienInvest</h1>
+        </div>
+        <div class="header-menu">
+            
+            <ul>
+                <li *ngIf="isLoggedIn()"><a routerLink="/aktien-und-etfs">Aktien und ETFs</a></li>
+                <li *ngIf="!isLoggedIn()"><a routerLink="/login">Aktien und ETFs</a></li>
+                <li *ngIf="isLoggedIn()" (click)="multiplayerStatus()" ><a>Multiplayer</a></li>
+                <li *ngIf="!isLoggedIn()"><a routerLink="/login">Multiplayer</a></li>
+                <li *ngIf="isLoggedIn()"><a routerLink="/highscore-list">Highscore</a></li>
+                <li *ngIf="!isLoggedIn()"><a routerLink="/login">Highscore</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-mein-account-logout">
+        
+        <button *ngIf="!isLoggedIn()" mat-raised-button routerLink="/registrierung">Registrieren</button>
+        <button *ngIf="isLoggedIn()" mat-raised-button routerLink="/mein-account">Mein Account</button>
+        <button *ngIf="!isLoggedIn()" mat-button routerLink="/login">Login</button>
+        <button *ngIf="isLoggedIn()" mat-button (click)="logout()">Logout</button>
+    </div>
+</header>

@@ -1,0 +1,20 @@
+.failed {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    .failed-content {
+        display: grid;
+   
+        h1, h2 {
+            text-align: center;
+            color: red;
+        }
+        
+        button {
+            margin-top: 2em;
+            justify-self: center;
+        }
+    }
+}

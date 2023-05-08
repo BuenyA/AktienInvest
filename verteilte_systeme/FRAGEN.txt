@@ -1,7 +1,0 @@
-- bcrypt in docker installieren ?!
-- alpaca nur US börse öffnet 9am und schließt 4pm uhr ---> bei uns in der Nacht --> bessere API unlimitiert vorhanden?
-- reset von influx DB nach neustart von docker
-- präsentation? PowerPoint?
-- Influx DB Struktur?
-- wie job automatisiert zum Laufen bekommen??
-- SQL Injections mit Views verhindern?

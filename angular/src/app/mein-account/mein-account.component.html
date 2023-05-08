@@ -1,0 +1,85 @@
+<app-header></app-header>
+<div class="account">
+  <mat-card>
+
+    <h1>Accountdaten</h1>
+    <button class="button1" mat-raised-button (click)="openEdit()">Ändern</button>
+    <button class="button2" mat-raised-button (click)="openDialog()">
+      Account löschen
+    </button>
+
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+
+      <mat-tab label="Spielerdaten">
+        <div class="tabs" *ngFor="let row of Accountdaten">
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                  <tr>
+                    <th>Spieler</th>
+                    
+                    <th>Ihre Mutiplayer-Spiel ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <img
+                            src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                            alt=""
+                            style="width: 45px; height: 45px"
+                            class="rounded-circle"
+                            />
+                        <div class="ms-3">
+                          <p class="fw-bold mb-1">{{ row.SPIELERNAME }}</p>
+                          <p class="text-muted mb-0">{{ row.EMAIL }}</p>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td>{{ row.MLTP_SPIEL_ID }}</td>
+                </tbody>
+              </table>
+            </div>
+      </mat-tab>
+
+      <mat-tab label="Persönliche Daten">
+        <div class="tabs" *ngFor="let row of Accountdaten">
+          <table class="table align-middle mb-0 bg-white">
+            <thead class="bg-light">
+              <tr>
+                <th class="person">Person</th>
+                <th>Strasse</th>
+                <th>Hausnummer</th>
+                <th>Postleitzahl</th>
+                <th>Stadt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">{{ row.ANREDE }}</p>
+                    <p class="fw-bold mb-1">
+                      {{ row.VORNAME }} {{ row.NACHNAME }}
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <p class="fw-normal mb-1">{{ row.STRASSE }}</p>
+                </td>
+                <td>
+                  <span class="fw-normal mb-1">{{ row.HAUSNUMMER }}</span>
+                </td>
+                <td>{{ row.PLZ }}</td>
+                <td>{{ row.STADT }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </mat-card>
+</div>
+<app-footer></app-footer>

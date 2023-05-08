@@ -1,0 +1,13 @@
+<div>
+    <h1 mat-dialog-title>Das Spiel wurde erfolgreich erstellt</h1>
+    <mat-dialog-content class="dialog-content">
+        <div class="price-budget">
+            <h2>Deine neue Spiel-ID: {{ gameID }}</h2>  
+        </div>
+        <p class="id_info">Bitte kopiere (oder notiere) diese ID und das gewählte Passwort und melde dich erstmalig für dein erstelltes Multiplayer-Spiel an!</p>
+        <p>Nach der erstmaligen Anmeldung findest du die Multiplayer-Spiel ID bei deinen Account-Informationen. Du wirst nun zur Anmeldung weitergeleitet.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions class="button">
+        <button color="primary" mat-raised-button routerLink="/multiplayer/beitreten" mat-dialog-close="true">Zum Multiplayer Modus</button>
+    </mat-dialog-actions>
+</div>

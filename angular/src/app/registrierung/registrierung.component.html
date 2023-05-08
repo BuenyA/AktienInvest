@@ -1,0 +1,126 @@
+<app-header></app-header>
+<form
+  class="registrierung-formular"
+  [formGroup]="RegistrierungForm"
+  (submit)="submit()"
+>
+
+  <mat-card>
+    <h1>Registrierung</h1>
+
+    <mat-form-field appearance="fill" appearance="outline">
+      <mat-label>Anrede</mat-label>
+      <mat-select formControlName="anrede" required>
+        <mat-option></mat-option>
+        <mat-option value="frau">Frau</mat-option>
+        <mat-option value="herr">Herr</mat-option>
+        <mat-option value="divers">Divers</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Vorname</mat-label>
+            <input matInput formControlName="vorname" required />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Nachname</mat-label>
+            <input matInput formControlName="nachname" required />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Strasse</mat-label>
+            <input matInput formControlName="strasse" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Hausnummer</mat-label>
+            <input matInput formControlName="hausnummer" />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Postleitzahl</mat-label>
+            <input matInput #postalCode maxlength="5" formControlName="plz" />
+            <mat-hint align="end">{{ postalCode.value.length }} / 5</mat-hint>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Stadt</mat-label>
+            <input matInput formControlName="stadt" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <h4>Spielerdaten</h4>
+
+    <table class="full-width">
+      <tr>
+        <td>
+          <mat-form-field appearance="fill" class="full-width" appearance="outline">
+            <mat-label>Spielername</mat-label>
+            <input matInput formControlName="spielername" required />
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <mat-form-field appearance="fill" class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required type="email" email="true"/>
+            <mat-hint align="end">Bitte gültige Mail Adresse angeben</mat-hint>
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field appearance="fill" class="full-width" appearance="outline">
+            <mat-label>Passwort</mat-label>
+            <input
+              matInput
+              type="password"
+              #passwort
+              formControlName="passwort"
+              minlength="7"
+              required
+              [type]="hide ? 'password' : 'text'"
+            />
+            <mat-hint align="end">Mindestens 7 Zeichen</mat-hint>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+              type="button"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </td>
+      </tr>
+      <br />
+      <button
+        mat-raised-button
+        [disabled]="!RegistrierungForm.valid"
+        type="submit"
+      >
+        Registrieren
+      </button>
+      <p>{{ serverAntwort }}</p>
+    </table>
+  </mat-card>
+</form>
+<app-footer></app-footer>

@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="mutliplayer-join">
+    <div class="multiplayer-join-box">
+        <h1>Spiel beitreten</h1>
+        <form class="example-form" [formGroup]="MultiplayerForm" (ngSubmit)="multiplayerJoin(MultiplayerForm.value)">
+            <div class="join-parameter">
+                <h2>ID</h2>
+                <mat-form-field class="example-full-width" appearance="fill" appearance="outline">
+                    <mat-label>Bitte ID eingeben</mat-label>
+                    <input matInput formControlName="id" #postalCode1>
+                    <mat-error *ngIf="postalCode1.value.length < 1">
+                        Bitte mindestens 1 Zeichen eingeben
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="join-parameter">
+                <h2>Passwort</h2>
+                <mat-form-field class="example-full-width"appearance="fill" appearance="outline">
+                    <mat-label>Bitte Passwort eingeben</mat-label>
+                    <input matInput formControlName="password" #postalCode2
+                        [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="join-parameter">
+                <button type="submit" mat-raised-button>Bestätigen</button>
+                <button routerLink="/multiplayer/startscreen" mat-raised-button>Zurück</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-footer></app-footer>

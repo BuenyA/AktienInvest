@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="login">
+    <form class="login-formular" [formGroup]="LoginForm" (submit)="submit()">
+        <mat-card>
+            <h1>Login</h1>
+            <table class="full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email" required />
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill" class="full-width" appearance="outline">
+                            <mat-label>Passwort</mat-label>
+                            <input matInput type="password" #passwort formControlName="passwort" minlength="7"
+                                [type]="hide ? 'password' : 'text'" required />
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide" type="button">
+                                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <button mat-raised-button [disabled]="!LoginForm.valid" type="submit">Login</button>
+            <p class="serverAnswer">{{ serverAntwort }}</p>
+        </mat-card>
+    </form>
+    <mat-card class="notRegistered">
+        <h2>Sie sind noch nicht registriert?</h2>
+        <button mat-raised-button routerLink="/registrierung">Registrierung</button>
+    </mat-card>
+</div>
+<app-footer></app-footer>

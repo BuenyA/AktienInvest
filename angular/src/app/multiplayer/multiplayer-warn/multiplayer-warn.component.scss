@@ -1,0 +1,24 @@
+.warn-element {
+    position: fixed;
+    display: grid;
+    align-items: center;
+    background-color: #3f51b5;
+    height: 2em;
+    width: 100%;
+    box-shadow: 0px 0px 5px 5px rgb(0, 0, 0, 0.2);
+    z-index: 9999;
+
+    h1 {
+        text-align: center;
+        font-size: 1.5em;
+        color: white;
+        margin: 0;
+    }
+}
+
+button {
+    position: sticky;
+    top: 90vh;
+    left: 3vw;
+    z-index: 9999;
+}

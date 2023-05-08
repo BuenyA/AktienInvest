@@ -1,0 +1,23 @@
+<div *ngIf="data.allowed">
+    <h1 mat-dialog-title>Verkaufen</h1>
+    <mat-dialog-content class="dialog-content">
+        <div class="price-budget">
+            <h3>{{ data.numberOfStocks }} Aktie(n) zum Preis von {{ data.numberOfStocks * data.price | currency:'USD':true }} verkaufen?</h3>
+            <h2>Dein aktuelles Guthaben beträgt: ${{ data.capital }}</h2>
+        </div>
+        <app-own-transactions [allDataSelected]="allDataSelected" [dataSource]="dataSource"></app-own-transactions>
+    </mat-dialog-content>
+    <mat-dialog-actions class="button">
+        <button *ngIf="multiplayerMode" (click)="sellMltp()" color="primary" mat-raised-button mat-dialog-close="true">Verkaufen</button>
+        <button *ngIf="!multiplayerMode" (click)="sell()" color="primary" mat-raised-button mat-dialog-close="true">Verkaufen</button>
+        <button mat-button mat-dialog-close="false">Abbrechen</button>
+    </mat-dialog-actions>
+</div>
+<div *ngIf="!data.allowed">
+    <h1 mat-dialog-title>Verkaufen</h1>
+    <mat-dialog-content class="dialog-content">
+        <div class="price-budget">
+            <h3>Du hast keine Aktienanzahl ausgewählt!</h3>
+        </div>
+    </mat-dialog-content>
+</div>

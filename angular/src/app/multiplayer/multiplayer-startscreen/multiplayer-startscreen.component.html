@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="multiplayer-startscreen-component">
+    <div class="multiplayer-startscreen-elements">
+        <div>
+            <h1>Multiplayer Modus</h1>
+            <h2>Sie sind derzeit keinem Spiel zugeordnet</h2>
+        </div>
+        <div class="multiplayer-choose">
+            <div class="create-game">
+                <h3>Spiel erstellen</h3>
+                <p>Im Folgenden können Sie ein Multiplayer Spiel erstellen.</p>
+                <p>Defür werden Sie gebeten einen Zeitraum sowie das Budget für das Spiel festzulegen.</p>
+                <button routerLink="/multiplayer/erstellen" mat-raised-button>Spiel erstellen</button>
+            </div>
+            <div class="seperator"></div>
+            <div class="join-game">
+                <h3>Spiel beitreten</h3>
+                <p>Im Folgenden können Sie einem Multiplayer Spiel beitreten.</p>
+                <p>Dafür benötigen Sie eine Spiel-ID und das entsprechende Passwort zur Verifizierung.</p>
+                <button routerLink="/multiplayer/beitreten" mat-raised-button>Spiel beitreten</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

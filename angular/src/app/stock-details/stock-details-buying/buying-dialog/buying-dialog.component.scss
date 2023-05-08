@@ -1,0 +1,21 @@
+.dialog-content{
+
+    h2 {
+        font-size: 1em;
+    }
+
+    h3 {
+        font-size: 1em;
+        font-weight: 500;
+        color: black;
+    }
+
+    .price-budget {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.button {
+    padding-left: 1em;
+}
