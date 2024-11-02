@@ -36,24 +36,50 @@ function callCurrentData() {
 }
 
 function readWriteDataMore() {
+    
     const writeApi = influxDB.getWriteApi('InfluxDbBroker', 'stockcharts');
 
     fmp.stock(stocks2).quote().then(response => {
         response.forEach(element => {
             if(consoleLog == true) {
-                console.log(element['symbol']);
-                console.log(element['symbol']);
-                console.log(element['name']);
-                console.log(element['price']);
-                console.log(element['changesPercentage']); //Change of this day in %
-                console.log(element['change']); //Change of this day in $
-                console.log(element['dayLow']);
-                console.log(element['dayHigh']);
-                console.log(element['yearHigh']);
-                console.log(element['yearLow']);
-                console.log(element['exchange']);
-                console.log(element['open']);
-                console.log(element['previousClose']);
+                console.log(element);
+            }
+            
+            if(element['symbol'] == null) {
+                element['symbol'] = "-";
+            }
+            if(element['name'] == null) {
+                element['name'] = "-";
+            }
+            if(element['price'] == null) {
+                element['price'] = "-";
+            }
+            if(element['symbol'] == null) {
+                element['symbol'] = "-";
+            }
+            if(element['changesPercentage'] == null) {
+                element['changesPercentage'] = "-";
+            }
+            if(element['change'] == null) {
+                element['change'] = "-";
+            }
+            if(element['dayLow'] == null) {
+                element['dayLow'] = "-";
+            }
+            if(element['dayHigh'] == null) {
+                element['dayHigh'] = "-";
+            }
+            if(element['yearLow'] == null) {
+                element['yearLow'] = "-";
+            }
+            if(element['exchange'] == null) {
+                element['exchange'] = "-";
+            }
+            if(element['open'] == null) {
+                element['open'] = "-";
+            }
+            if(element['previousClose'] == null) {
+                element['previousClose'] = 0.00;
             }
 
             const price = new Point(element['symbol']).tag('Kennzahl', 'Price').floatField('value', element['price']);
